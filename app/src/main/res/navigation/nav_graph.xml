@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/beerListFragment">
+
+    <fragment
+        android:id="@+id/beerListFragment"
+        android:name="com.mkgrimaldos.punkapidemo.ui.beerlist.BeerListFragment"
+        android:label="beer_list_fragment"
+        tools:layout="@layout/beer_list_fragment" />
+</navigation>

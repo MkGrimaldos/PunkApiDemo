@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">PunkApiDemo</string>
+    <string name="no_items">No hay elementos que mostrar.</string>
+</resources>
