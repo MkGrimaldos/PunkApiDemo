@@ -17,6 +17,7 @@ class BeerListViewModel(private val getBeerListUseCase: GetBeerListUseCase) : Vi
 
     init {
         viewModelScope.launch {
+            // TODO: Show loading view
             processResult(getBeerListUseCase())
         }
     }
@@ -24,8 +25,7 @@ class BeerListViewModel(private val getBeerListUseCase: GetBeerListUseCase) : Vi
     private fun processResult(result: Result<List<BeerDetails>>) {
         when (result) {
             is Result.Success -> {
-                val exampleSize = if (result.data.size > 100) 100 else result.data.size
-                _beerList.postValue(result.data.take(exampleSize))
+                _beerList.postValue(result.data)
             }
             is Result.Error -> {
 
