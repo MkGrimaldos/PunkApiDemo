@@ -4,5 +4,14 @@ import com.mkgrimaldos.punkapidemo.data.service.model.BeerDetailsApi
 import com.mkgrimaldos.punkapidemo.domain.model.BeerDetails
 
 fun BeerDetailsApi.toDomain(): BeerDetails {
-    return BeerDetails(name, tagline)
+    return BeerDetails(
+        id,
+        name,
+        tagline,
+        imageUrl,
+        description,
+        alcoholByVolume,
+        bitterness,
+        foodPairing
+    )
 }
