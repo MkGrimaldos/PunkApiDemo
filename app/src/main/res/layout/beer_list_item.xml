@@ -10,12 +10,13 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground">
 
             <ImageView
                 android:id="@+id/iv_beer_icon"
-                android:layout_width="0dp"
-                android:layout_height="36dp"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
                 android:layout_margin="16dp"
                 android:adjustViewBounds="true"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -28,32 +29,28 @@
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="4dp"
+                android:ellipsize="marquee"
+                android:gravity="center_vertical"
+                android:singleLine="true"
+                android:textSize="16sp"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@id/tv_tagline"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/iv_beer_icon"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintTop_toTopOf="@id/iv_beer_icon"
                 app:layout_goneMarginEnd="40dp"
                 tools:text="@tools:sample/lorem" />
-
-            <!--        <ImageView-->
-            <!--            android:id="@+id/iv_arrow"-->
-            <!--            android:layout_width="24dp"-->
-            <!--            android:layout_height="24dp"-->
-            <!--            android:layout_marginEnd="8dp"-->
-            <!--            android:src="@drawable/baseline_keyboard_arrow_right_black_48"-->
-            <!--            app:layout_constraintBottom_toBottomOf="parent"-->
-            <!--            app:layout_constraintEnd_toEndOf="parent"-->
-            <!--            app:layout_constraintTop_toTopOf="parent" />-->
 
             <TextView
                 android:id="@+id/tv_tagline"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:layout_marginBottom="8dp"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:ellipsize="marquee"
+                android:singleLine="true"
+                android:textStyle="italic"
+                app:layout_constraintBottom_toBottomOf="@id/iv_beer_icon"
                 app:layout_constraintEnd_toEndOf="@id/tv_name"
                 app:layout_constraintStart_toStartOf="@id/tv_name"
                 app:layout_constraintTop_toBottomOf="@id/tv_name"
