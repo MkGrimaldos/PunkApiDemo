@@ -15,6 +15,8 @@ fun bindImageFromUrl(view: ImageView, imageUrl: String?) {
 }
 
 @BindingAdapter("app:formatText", "app:formatArguments")
-fun setFormattedText(textView: TextView, baseText: String, formatValue: String) {
-    textView.text = String.format(baseText, formatValue)
+fun setFormattedText(textView: TextView, baseText: String?, formatValue: String?) {
+    if (!baseText.isNullOrEmpty() && !formatValue.isNullOrEmpty()) {
+        textView.text = String.format(baseText, formatValue)
+    }
 }

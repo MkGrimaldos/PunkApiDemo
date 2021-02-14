@@ -3,6 +3,7 @@ package com.mkgrimaldos.punkapidemo.ui.beerlist
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.mkgrimaldos.punkapidemo.R
@@ -22,5 +23,11 @@ class BeerListItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 
         tvName.text = beerDetails.name
         tvTagline.text = beerDetails.tagline
+
+        itemView.setOnClickListener {
+            val direction =
+                BeerListFragmentDirections.actionBeerListFragmentToBeerDetailsFragment(beerDetails)
+            itemView.findNavController().navigate(direction)
+        }
     }
 }

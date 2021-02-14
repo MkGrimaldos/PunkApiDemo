@@ -6,11 +6,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.navArgs
 import com.mkgrimaldos.punkapidemo.databinding.FragmentBeerDetailsBinding
 
 class BeerDetailsFragment : Fragment() {
 
-    private val viewModel: BeerDetailsViewModel by viewModels()
+    private val args: BeerDetailsFragmentArgs by navArgs()
+
+    private val viewModel: BeerDetailsViewModel by viewModels {
+        BeerDetailsViewModelFactory(args.beerDetails)
+    }
 
     private var _binding: FragmentBeerDetailsBinding? = null
 
