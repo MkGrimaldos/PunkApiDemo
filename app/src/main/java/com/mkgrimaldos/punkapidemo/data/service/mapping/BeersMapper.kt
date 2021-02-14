@@ -10,8 +10,8 @@ fun BeerDetailsApi.toDomain(): BeerDetails {
         tagline,
         imageUrl,
         description,
-        alcoholByVolume,
-        bitterness,
+        alcoholByVolume.toString(),
+        bitterness.toString(),
         foodPairing
     )
 }

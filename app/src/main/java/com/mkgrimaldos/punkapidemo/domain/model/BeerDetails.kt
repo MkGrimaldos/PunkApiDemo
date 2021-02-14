@@ -6,7 +6,17 @@ data class BeerDetails(
     val tagline: String,
     val imageUrl: String,
     val description: String,
-    val alcoholByVolume: Float,
-    val bitterness: Float,
+    val alcoholByVolume: String,
+    val bitterness: String,
     val foodPairing: List<String>
-)
+) {
+    fun getFormattedFoodPairing(): String {
+        var resultString = ""
+
+        for (pairing in foodPairing) {
+            resultString += "- $pairing\n\n"
+        }
+
+        return resultString
+    }
+}
