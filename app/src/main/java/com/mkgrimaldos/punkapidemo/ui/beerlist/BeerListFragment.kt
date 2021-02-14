@@ -33,7 +33,6 @@ class BeerListFragment : Fragment() {
 
         configureRecyclerView()
         setObservers()
-        viewModel.fetchData()
     }
 
     override fun onDestroyView() {
