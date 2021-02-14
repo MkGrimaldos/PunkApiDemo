@@ -5,12 +5,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import com.mkgrimaldos.punkapidemo.databinding.BeerListFragmentBinding
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class BeerListFragment : Fragment() {
 
-    private val viewModel: BeerListViewModel by viewModels()
+    private val viewModel: BeerListViewModel by viewModel()
 
     private var _binding: BeerListFragmentBinding? = null
 
