@@ -9,5 +9,23 @@
         android:id="@+id/beerListFragment"
         android:name="com.mkgrimaldos.punkapidemo.ui.beerlist.BeerListFragment"
         android:label="beer_list_fragment"
-        tools:layout="@layout/beer_list_fragment" />
+        tools:layout="@layout/beer_list_fragment">
+        <action
+            android:id="@+id/action_beerListFragment_to_beerDetailsFragment"
+            app:destination="@id/beerDetailsFragment"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_open_exit"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/beerDetailsFragment"
+        android:name="com.mkgrimaldos.punkapidemo.ui.beerdetails.BeerDetailsFragment"
+        android:label="fragment_beer_details"
+        tools:layout="@layout/fragment_beer_details">
+        <argument
+            android:name="beerDetails"
+            app:argType="com.mkgrimaldos.punkapidemo.domain.model.BeerDetails" />
+    </fragment>
 </navigation>

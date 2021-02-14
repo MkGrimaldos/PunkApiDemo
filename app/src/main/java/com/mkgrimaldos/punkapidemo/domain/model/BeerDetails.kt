@@ -1,5 +1,7 @@
 package com.mkgrimaldos.punkapidemo.domain.model
 
+import java.io.Serializable
+
 data class BeerDetails(
     val id: Int,
     val name: String,
@@ -9,7 +11,7 @@ data class BeerDetails(
     val alcoholByVolume: String,
     val bitterness: String,
     val foodPairing: List<String>
-) {
+) : Serializable {
     fun getFormattedFoodPairing(): String {
         var resultString = ""
 
