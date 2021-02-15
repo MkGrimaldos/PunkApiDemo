@@ -39,13 +39,13 @@ class BeerDetailsListBoundaryCallback(
         if (!isRequestInProgress) {
             isRequestInProgress = true
 
-            try {
-                service.getBeers(page, PAGE_SIZE).enqueue(object : Callback<List<BeerDetailsApi>> {
-                    override fun onResponse(
-                        call: Call<List<BeerDetailsApi>>,
-                        response: Response<List<BeerDetailsApi>>
-                    ) {
-                        if (response.isSuccessful) {
+            service.getBeers(page, PAGE_SIZE).enqueue(object : Callback<List<BeerDetailsApi>> {
+                override fun onResponse(
+                    call: Call<List<BeerDetailsApi>>,
+                    response: Response<List<BeerDetailsApi>>
+                ) {
+                    if (response.isSuccessful) {
+                        try {
                             val beerDetailsDBList =
                                 response.body()?.map { it.toDB() } ?: emptyList()
 
@@ -54,24 +54,21 @@ class BeerDetailsListBoundaryCallback(
                                 page++
                                 isRequestInProgress = false
                             }
-                        } else {
-                            _errorMessage.postValue(
-                                response.errorBody()?.string() ?: "Network error"
-                            )
+                        } catch (e: Exception) {
+                            _errorMessage.postValue(e.message ?: "Network error")
                             isRequestInProgress = false
                         }
-                    }
-
-                    override fun onFailure(call: Call<List<BeerDetailsApi>>, t: Throwable) {
-                        _errorMessage.postValue(t.message ?: "Network error")
+                    } else {
+                        _errorMessage.postValue(response.errorBody()?.string() ?: "Network error")
                         isRequestInProgress = false
                     }
+                }
 
-                })
-            } catch (e: Exception) {
-                _errorMessage.postValue(e.message ?: "Network error")
-                isRequestInProgress = false
-            }
+                override fun onFailure(call: Call<List<BeerDetailsApi>>, t: Throwable) {
+                    _errorMessage.postValue(t.message ?: "Network error")
+                    isRequestInProgress = false
+                }
+            })
         }
     }
 }

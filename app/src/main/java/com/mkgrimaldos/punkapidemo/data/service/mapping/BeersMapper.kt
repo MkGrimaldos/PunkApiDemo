@@ -7,13 +7,13 @@ import com.mkgrimaldos.punkapidemo.domain.model.BeerDetails
 fun BeerDetailsApi.toDomain(): BeerDetails {
     return BeerDetails(
         id,
-        name,
-        tagline,
-        imageUrl,
-        description,
-        alcoholByVolume.toString(),
-        bitterness.toString(),
-        foodPairing,
+        name ?: "",
+        tagline ?: "",
+        imageUrl ?: "",
+        description ?: "",
+        alcoholByVolume?.toString() ?: "-",
+        bitterness?.toString() ?: "-",
+        foodPairing ?: emptyList(),
         true
     )
 }
@@ -21,12 +21,12 @@ fun BeerDetailsApi.toDomain(): BeerDetails {
 fun BeerDetailsApi.toDB(): BeerDetailsDB {
     return BeerDetailsDB(
         id,
-        name,
-        tagline,
-        imageUrl,
-        description,
-        alcoholByVolume.toString(),
-        bitterness.toString(),
-        foodPairing
+        name ?: "",
+        tagline ?: "",
+        imageUrl ?: "",
+        description ?: "",
+        alcoholByVolume?.toString() ?: "-",
+        bitterness?.toString() ?: "-",
+        foodPairing ?: emptyList()
     )
 }
