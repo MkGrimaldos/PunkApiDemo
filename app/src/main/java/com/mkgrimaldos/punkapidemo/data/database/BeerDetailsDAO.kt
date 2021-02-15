@@ -1,6 +1,6 @@
 package com.mkgrimaldos.punkapidemo.data.database
 
-import androidx.lifecycle.LiveData
+import androidx.paging.DataSource
 import androidx.room.*
 import com.mkgrimaldos.punkapidemo.data.database.model.BeerDetailsDB
 import com.mkgrimaldos.punkapidemo.data.database.model.BeerDetailsLiteDB
@@ -32,7 +32,7 @@ abstract class BeerDetailsDAO {
     abstract fun deleteAll()
 
     @Query("SELECT * FROM BeerDetails")
-    abstract fun getAll(): LiveData<List<BeerDetailsDB>>
+    abstract fun getAll(): DataSource.Factory<Int, BeerDetailsDB>
 
     @Transaction
     open fun insertOrUpdateLite(beerDetails: BeerDetailsDB) {

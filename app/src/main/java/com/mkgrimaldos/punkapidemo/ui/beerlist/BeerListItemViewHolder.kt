@@ -1,6 +1,7 @@
 package com.mkgrimaldos.punkapidemo.ui.beerlist
 
-import android.view.View
+import android.view.LayoutInflater
+import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.navigation.findNavController
@@ -9,7 +10,10 @@ import com.bumptech.glide.Glide
 import com.mkgrimaldos.punkapidemo.R
 import com.mkgrimaldos.punkapidemo.domain.model.BeerDetails
 
-class BeerListItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+class BeerListItemViewHolder(parent: ViewGroup) : RecyclerView.ViewHolder(
+    LayoutInflater.from(parent.context).inflate(R.layout.beer_list_item, parent, false)
+) {
+
     var ivBeerIcon: ImageView = itemView.findViewById(R.id.iv_beer_icon)
     var tvName: TextView = itemView.findViewById(R.id.tv_name)
     var tvTagline: TextView = itemView.findViewById(R.id.tv_tagline)

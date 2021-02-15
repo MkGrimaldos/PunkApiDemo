@@ -10,7 +10,8 @@ data class BeerDetails(
     val description: String,
     val alcoholByVolume: String,
     val bitterness: String,
-    val foodPairing: List<String>
+    val foodPairing: List<String>,
+    val isAvailable: Boolean
 ) : Serializable {
     fun getFormattedFoodPairing(): String {
         var resultString = ""

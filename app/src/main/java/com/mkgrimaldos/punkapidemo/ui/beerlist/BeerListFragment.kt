@@ -1,6 +1,7 @@
 package com.mkgrimaldos.punkapidemo.ui.beerlist
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -46,10 +47,12 @@ class BeerListFragment : Fragment() {
 
     private fun setObservers() {
         viewModel.beerList.observe(viewLifecycleOwner) {
-            (binding.rvBeersList.adapter as? BeerListAdapter)?.apply {
-                beerList = it
-                notifyDataSetChanged()
-            }
+            (binding.rvBeersList.adapter as? BeerListAdapter)?.submitList(it)
+        }
+
+        viewModel.error.observe(viewLifecycleOwner) {
+            // TODO: Handle error
+            Log.d("MIGUEL", it)
         }
     }
 }

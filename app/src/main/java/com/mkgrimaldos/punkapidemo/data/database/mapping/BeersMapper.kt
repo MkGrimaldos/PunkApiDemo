@@ -12,6 +12,21 @@ fun BeerDetailsDB.toDomain(): BeerDetails {
         description,
         alcoholByVolume,
         bitterness,
-        foodPairing
+        foodPairing,
+        isAvailable
+    )
+}
+
+fun BeerDetails.toDB(): BeerDetailsDB {
+    return BeerDetailsDB(
+        id,
+        name,
+        tagline,
+        imageUrl,
+        description,
+        alcoholByVolume,
+        bitterness,
+        foodPairing,
+        isAvailable
     )
 }

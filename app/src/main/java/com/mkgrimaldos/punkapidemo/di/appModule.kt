@@ -23,7 +23,7 @@ val appModule = module {
     }
 
     single<BeerRepository> {
-        BeerRepositoryImpl(get())
+        BeerRepositoryImpl(get(), get())
     }
 
     single<PunkApiService> {

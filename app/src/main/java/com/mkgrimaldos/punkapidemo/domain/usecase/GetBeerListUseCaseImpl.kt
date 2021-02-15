@@ -5,7 +5,7 @@ import com.mkgrimaldos.punkapidemo.domain.model.BeerDetails
 import com.mkgrimaldos.punkapidemo.domain.repository.BeerRepository
 
 class GetBeerListUseCaseImpl(private val beerRepository: BeerRepository) : GetBeerListUseCase {
-    override suspend operator fun invoke(): Result<List<BeerDetails>> {
+    override suspend operator fun invoke(): Result<BeerDetails> {
         return beerRepository.getBeerList()
     }
 }
