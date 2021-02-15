@@ -14,7 +14,7 @@ abstract class BeerDetailsDAO {
     abstract fun insertAll(beerDetailsList: List<BeerDetailsDB>): List<Long>
 
     @Update
-    abstract fun update(beerDetails: BeerDetailsDB)
+    abstract suspend fun update(beerDetails: BeerDetailsDB)
 
     @Update
     abstract fun updateAll(beerDetailsList: List<BeerDetailsDB>)

@@ -5,4 +5,5 @@ import com.mkgrimaldos.punkapidemo.domain.model.BeerDetails
 
 interface BeerRepository {
     suspend fun getBeerList(): Result<BeerDetails>
+    suspend fun setBeerDetails(beerDetails: BeerDetails)
 }

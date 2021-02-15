@@ -5,4 +5,7 @@
     <string name="food_pairing_title">Food Pairing</string>
     <string name="abv">ABV: %s%%</string>
     <string name="bitterness">IBU: %s</string>
+    <string name="beer_unavailable">This beer is currently unavailable.</string>
+    <string name="mark_beer_available">Mark as available</string>
+    <string name="mark_beer_unavailable">Mark as unavailable</string>
 </resources>

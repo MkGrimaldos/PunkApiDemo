@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
 import com.mkgrimaldos.punkapidemo.data.database.BeerDetailsDAO
+import com.mkgrimaldos.punkapidemo.data.database.mapping.toDB
 import com.mkgrimaldos.punkapidemo.data.database.mapping.toDomain
 import com.mkgrimaldos.punkapidemo.data.paging.BeerDetailsListBoundaryCallback
 import com.mkgrimaldos.punkapidemo.data.paging.PagingConfigParams.PAGE_SIZE
@@ -32,5 +33,9 @@ class BeerRepositoryImpl(
         ).setBoundaryCallback(beerDetailsListBoundaryCallback).build()
 
         return Result(beerDetails, errorMessage)
+    }
+
+    override suspend fun setBeerDetails(beerDetails: BeerDetails) {
+        beerDetailsDAO.update(beerDetails.toDB())
     }
 }

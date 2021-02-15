@@ -1,5 +1,6 @@
 package com.mkgrimaldos.punkapidemo.ui.common
 
+import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
@@ -19,4 +20,9 @@ fun setFormattedText(textView: TextView, baseText: String?, formatValue: String?
     if (!baseText.isNullOrEmpty() && !formatValue.isNullOrEmpty()) {
         textView.text = String.format(baseText, formatValue)
     }
+}
+
+@BindingAdapter("android:visibility")
+fun setVisibility(view: View, value: Boolean) {
+    view.visibility = if (value) View.VISIBLE else View.GONE
 }

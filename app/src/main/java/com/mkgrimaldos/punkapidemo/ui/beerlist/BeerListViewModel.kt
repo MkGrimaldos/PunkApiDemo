@@ -16,7 +16,6 @@ class BeerListViewModel(private val getBeerListUseCase: GetBeerListUseCase) : Vi
 
     init {
         viewModelScope.launch {
-            // TODO: Show loading view
             processResult(getBeerListUseCase())
         }
     }

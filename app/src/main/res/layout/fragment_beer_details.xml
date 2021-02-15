@@ -11,126 +11,159 @@
             type="com.mkgrimaldos.punkapidemo.ui.beerdetails.BeerDetailsViewModel" />
     </data>
 
-
-    <ScrollView
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <ScrollView
+            android:id="@+id/sv_scroll"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
-            <ImageView
-                android:id="@+id/iv_beer_image"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:layout_marginTop="16dp"
-                app:imageFromUrl="@{viewModel.beerDetails.imageUrl}"
-                app:layout_constraintStart_toStartOf="@id/guideline_start"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:src="@tools:sample/avatars" />
 
-            <TextView
-                android:id="@+id/tv_name"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:text="@{viewModel.beerDetails.name}"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@id/tv_abv"
-                app:layout_constraintEnd_toEndOf="@id/guideline_end"
-                app:layout_constraintStart_toEndOf="@id/iv_beer_image"
-                app:layout_constraintTop_toTopOf="@id/iv_beer_image"
-                tools:text="@tools:sample/lorem" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/tv_abv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:textSize="16sp"
-                app:formatArguments="@{viewModel.beerDetails.alcoholByVolume}"
-                app:formatText="@{@string/abv}"
-                app:layout_constraintBottom_toBottomOf="@id/iv_beer_image"
-                app:layout_constraintStart_toStartOf="@id/tv_name"
-                tools:text="@tools:sample/lorem" />
+                <ImageView
+                    android:id="@+id/iv_beer_image"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_marginTop="16dp"
+                    app:imageFromUrl="@{viewModel.beerDetails.imageUrl}"
+                    app:layout_constraintStart_toStartOf="@id/guideline_start"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:src="@tools:sample/avatars" />
 
-            <TextView
-                android:id="@+id/tv_bitterness"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="16sp"
-                app:formatArguments="@{viewModel.beerDetails.bitterness}"
-                app:formatText="@{@string/bitterness}"
-                app:layout_constraintBottom_toBottomOf="@id/tv_abv"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/tv_abv"
-                app:layout_constraintTop_toTopOf="@id/tv_abv"
-                tools:text="@tools:sample/lorem" />
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@{viewModel.beerDetails.name}"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@id/tv_abv"
+                    app:layout_constraintEnd_toEndOf="@id/guideline_end"
+                    app:layout_constraintStart_toEndOf="@id/iv_beer_image"
+                    app:layout_constraintTop_toTopOf="@id/iv_beer_image"
+                    tools:text="@tools:sample/lorem" />
 
-            <TextView
-                android:id="@+id/tv_description_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="48dp"
-                android:text="@string/description_title"
-                android:textSize="32sp"
-                app:layout_constraintStart_toStartOf="@id/guideline_start"
-                app:layout_constraintTop_toBottomOf="@id/iv_beer_image" />
+                <TextView
+                    android:id="@+id/tv_abv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:textSize="16sp"
+                    app:formatArguments="@{viewModel.beerDetails.alcoholByVolume}"
+                    app:formatText="@{@string/abv}"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_beer_image"
+                    app:layout_constraintStart_toStartOf="@id/tv_name"
+                    tools:text="@tools:sample/lorem" />
 
-            <TextView
-                android:id="@+id/tv_description"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:text="@{viewModel.beerDetails.description}"
-                android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="@id/guideline_end"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="@id/guideline_start"
-                app:layout_constraintTop_toBottomOf="@id/tv_description_title"
-                tools:text="@tools:sample/lorem/random" />
+                <TextView
+                    android:id="@+id/tv_bitterness"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    app:formatArguments="@{viewModel.beerDetails.bitterness}"
+                    app:formatText="@{@string/bitterness}"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_abv"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tv_abv"
+                    app:layout_constraintTop_toTopOf="@id/tv_abv"
+                    tools:text="@tools:sample/lorem" />
 
-            <TextView
-                android:id="@+id/tv_food_pairing_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
-                android:text="@string/food_pairing_title"
-                android:textSize="32sp"
-                app:layout_constraintStart_toStartOf="@id/guideline_start"
-                app:layout_constraintTop_toBottomOf="@id/tv_description" />
+                <TextView
+                    android:id="@+id/tv_beer_unavailable"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:gravity="center"
+                    android:text="@string/beer_unavailable"
+                    android:textColor="@android:color/holo_red_light"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:visibility="@{!viewModel.beerDetails.available}"
+                    app:layout_constraintBottom_toTopOf="@id/tv_description_title"
+                    app:layout_constraintEnd_toEndOf="@id/guideline_end"
+                    app:layout_constraintStart_toStartOf="@id/guideline_start"
+                    app:layout_constraintTop_toBottomOf="@id/iv_beer_image" />
 
-            <TextView
-                android:id="@+id/tv_food_pairing"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="16dp"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@id/guideline_end"
-                app:layout_constraintStart_toStartOf="@id/guideline_start"
-                app:layout_constraintTop_toBottomOf="@id/tv_food_pairing_title"
-                app:text="@{viewModel.beerDetails.getFormattedFoodPairing()}"
-                tools:text="@tools:sample/lorem/random" />
+                <TextView
+                    android:id="@+id/tv_description_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/description_title"
+                    android:textSize="32sp"
+                    app:layout_constraintStart_toStartOf="@id/guideline_start"
+                    app:layout_constraintTop_toBottomOf="@id/tv_beer_unavailable"
+                    app:layout_goneMarginTop="52dp" />
 
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline_start"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintGuide_begin="16dp" />
+                <TextView
+                    android:id="@+id/tv_description"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="@{viewModel.beerDetails.description}"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="@id/guideline_end"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="@id/guideline_start"
+                    app:layout_constraintTop_toBottomOf="@id/tv_description_title"
+                    tools:text="@tools:sample/lorem/random" />
 
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline_end"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintGuide_end="16dp" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
+                <TextView
+                    android:id="@+id/tv_food_pairing_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:text="@string/food_pairing_title"
+                    android:textSize="32sp"
+                    app:layout_constraintStart_toStartOf="@id/guideline_start"
+                    app:layout_constraintTop_toBottomOf="@id/tv_description" />
+
+                <TextView
+                    android:id="@+id/tv_food_pairing"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/guideline_end"
+                    app:layout_constraintStart_toStartOf="@id/guideline_start"
+                    app:layout_constraintTop_toBottomOf="@id/tv_food_pairing_title"
+                    app:text="@{viewModel.beerDetails.getFormattedFoodPairing()}"
+                    tools:text="@tools:sample/lorem/random" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline_start"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="16dp" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline_end"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="16dp" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/fab_toggle_availability"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="16dp"
+            android:onClick="@{(view) -> viewModel.onToggleAvailability()}"
+            app:layout_anchor="@id/sv_scroll"
+            app:layout_anchorGravity="bottom|end"
+            tools:text="Mark as unavailable" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>
