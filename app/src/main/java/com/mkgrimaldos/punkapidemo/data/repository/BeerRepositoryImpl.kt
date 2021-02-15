@@ -10,7 +10,7 @@ import com.mkgrimaldos.punkapidemo.domain.repository.BeerRepository
 class BeerRepositoryImpl(private val service: PunkApiService) : BeerRepository {
     override suspend fun getBeerList(): Result<List<BeerDetails>> {
         return ResponseProcesser.processResponse(
-            { service.getBeers() },
+            { service.getBeers(1) },
             { it!!.map { beerDetailsApi -> beerDetailsApi.toDomain() } })
     }
 }
