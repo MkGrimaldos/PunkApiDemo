@@ -34,6 +34,9 @@ abstract class BeerDetailsDAO {
     @Query("SELECT * FROM BeerDetails")
     abstract fun getAll(): DataSource.Factory<Int, BeerDetailsDB>
 
+    @Query("SELECT * FROM BeerDetails WHERE id = :id")
+    abstract fun getBeerDetails(id: Int): BeerDetailsDB?
+
     @Transaction
     open fun insertOrUpdateLite(beerDetails: BeerDetailsDB) {
         val id = insert(beerDetails)
